@@ -1,0 +1,65 @@
+body{
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    background-image: url("./img/bg-tablet-pattern.svg");
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 10px;
+}
+
+#data-section{
+    padding: 15px;
+    display: grid;
+    grid-template-columns: 100%;
+    article:first-child{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    article{
+        h1{
+            font-size:xx-large;
+            text-transform: capitalize;
+            color:  hsl(228, 39%, 23%);
+            margin-bottom: 0;
+        }
+        p{
+            color: hsl(227, 12%, 61%)
+        }
+        button{
+            background-color: hsl(12, 88%, 59%);
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            text-transform: capitalize;
+            color: hsl(0, 0%, 98%);
+        }
+    }
+}
+
+@media ( min-width: 600px){
+
+
+    #data-section{
+        grid-template-columns: 50% 50%;
+        article:last-child{
+            padding: 0 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: left;
+            button{
+                align-self: flex-start;
+            }
+        }
+    }
+}
+
+
+
+
+
