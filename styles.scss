@@ -1,35 +1,55 @@
+/* Primary */
+$bright-Red: hsl(12, 88%, 59%);
+$Dark-Blue: hsl(228, 39%, 23%);
+
+/*Neutral */
+$Grayish-blue: hsl(227, 12%, 61%);
+$Very-Blue: hsl(233, 12%, 13%);
+$Very-Red: hsl(13, 100%, 96%);
+$Very-light: hsl(0, 0%, 98%);
+
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: "Be Vietnam", sans-serif;
-  }
-  body {
-    background-image: url("./img/bg-tablet-pattern.svg");
-    background-repeat: no-repeat;
-    background-position: right top;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Be Vietnam", sans-serif;
+}
+body {
+  background-image: url("./img/bg-tablet-pattern.svg");
+  background-repeat: no-repeat;
+  background-position: right top;
+  text-align: center;
+  padding: 0.5rem;
+}
+
+/*
+@mixin format($direction) {
+  display: flex;
+  flex-direction: $direction;
+}
+      
+.wrapper {
+  @include format(column);
+  .question {
     text-align: center;
-  }
-  @mixin format($direction) {
-    display: flex;
-    flex-direction: $direction;
-  }
-  /* Primary */
-  $bright-Red: hsl(12, 88%, 59%);
-  $Dark-Blue: hsl(228, 39%, 23%);
-  
-  /*Neutral */
-  $Grayish-blue: hsl(227, 12%, 61%);
-  $Very-Blue: hsl(233, 12%, 13%);
-  $Very-Red: hsl(13, 100%, 96%);
-  $Very-light: hsl(0, 0%, 98%);
-  
-  .wrapper {
-    @include format(column);
-    .question {
-      text-align: center;
-      padding: 1rem;
-      color: $Dark-Blue;
+    padding: 1rem;
+    color: $Dark-Blue;
+  } 
+*/
+
+/*.articles {
+  @include format(column);
+  div {
+    @include format(row);
+    position: relative;
+    margin: 1.5px;
+    .number {
+      padding: 0.1rem 1rem;
+      border-radius: 1rem;
+      background-color: $bright-Red;
+      color: $Very-light;
+      position: absolute;
+      width: 15%;
     }
     p {
       padding: 1rem;
@@ -38,7 +58,9 @@
       line-height: 1.7;
     }
   }
-  .articles {
+*/
+  
+/*  .articles {
     @include format(column);
     div {
       @include format(row);
@@ -50,7 +72,6 @@
         background-color: $bright-Red;
         color: $Very-light;
         position: absolute;
-  
         width: 15%;
       }
       span {
@@ -68,8 +89,9 @@
       color: $Grayish-blue;
       line-height: 1.7;
     }
-  }
-  
+ }
+ */
+  /*
   footer {
     background-color: $Very-Blue;
     @include format(column);
@@ -137,15 +159,10 @@
         width: 200px;
       }
     }
-  }
-  
+  }   
+*/
 
-
-
-
-  
-
-  .section3 {
+/*.......empieza cambios de Brisset.......*/
     @mixin flex-column {
       display: flex;
       flex-direction: column;
@@ -170,28 +187,164 @@
       border: none;
       cursor: pointer;
     }
+  .section3 {
+      @include flex-column();
+      color: $Dark-Blue;
+      h3 {
+        font-size: 2rem;
+      }
+      .card {
+        display: flex;
+        flex-direction: row;
+        .anisha  {
+          display: none;
+        }
+        .richard {
+          display: none;
+        }
+        .ali {
+          width: 100%;
+          padding: 1.5rem;
+          @include flex-column();
+          .name {
+            font-size: 1.5rem;
+            font-weight: bold;
+          }
+          .tex{
+            color: $Grayish-blue;
+          }
+        }
+      }
+      .point {
+        width: 100%;
+        .point1.point2 .point3 {
+          width: 1rem;
+          height: 1rem;
+          color: black;
+        }
+      }
+      .purple {
+        @include purple();
+        &:hover{
+          opacity: 0.5;
+        }
+      }
+      .started {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        background-image: url("./img/bg-simplify-section-mobile.svg");
+        background-repeat: no-repeat;
+        background-position:left;
+        background-color: $bright-Red;
+        h3 {
+          text-align: center;
+          padding: 3rem 1rem 0;
+          color: $Very-Red;
+        }
+        .btn-white {
+          display: flex;
+          margin-bottom: 1rem;
+          justify-content: center;
+          padding: 2rem;
+        }
+        
+        .white {
+          @include white();
+          &:hover{
+            opacity: 0.5;
+          }
     
-    @include flex-column();
-    color: $Dark-Blue;
-    h3 {
-      font-size: 2rem;
+        }
+      }
+  }
+/*.......termina cambios de Brisset.......*/
+/*
+  footer {
+    background-color: $Very-Blue;
+  
+    @include format(column);
+    .inbox {
+      @include format(row);
+      justify-content: center;
+      padding: 1.5rem 0;
+      input {
+        margin: 0.5rem;
+        width: 65%;
+        border-radius: 50px;
+        padding: 0.8rem;
+        border: none;
+      }
     }
+  
+    div:nth-of-type(2) {
+      padding-left: 1rem;
+        ul {
+          column-count: 2;
+          padding: 2.5rem;
+          li {
+            display: flex;
+            list-style-type: none;
+            line-height: 2;
+              a {
+              color: $Very-light;
+              text-decoration: none;
+            }
+          }
+        }
+        
+      }
+  
+  
+    div:nth-of-type(3) {
+      @include format(column-reverse);
+      justify-content: space-around;
+      color: $Grayish-blue;
+      align-items: center;
+      padding: 0;
+    
+      img {
+        width: 45%;
+        padding: 10px;
+        margin: 0px 5px;
+      }
+      div {
+        @include format(row);
+        justify-content: center;
+        img {
+          
+          justify-content: center;
+          margin: 1rem 0.5rem;
+          width: 50px;
+        }
+      }
+      p {
+        @include format(row);
+        justify-content: center;
+        font-size: 7pt;
+        padding: 2rem;
+      }
+    }
+  }
+*/ 
+ 
+@media only screen and(min-width:1000px) {
+/*.......empieza cambios de Brisset.......*/
+
+  @mixin card {
+    display: block;
+    width: calc(100% / 3);
+    @include flex-column();
+    padding: 1.5rem;
+  }
+  .section3 {
+    @include flex-column();
     .card {
       display: flex;
       flex-direction: row;
-
-      .anisha  {
-        display: none;
-      }
-      
-      .richard {
-        display: none;
-      }
-
-      .ali {
-        width: 100%;
-        padding: 1.5rem;
-        @include flex-column();
+      .anisha {
+        @include card();
         .name {
           font-size: 1.5rem;
           font-weight: bold;
@@ -200,119 +353,49 @@
           color: $Grayish-blue;
         }
       }
+      .richard {
+        @include card();
+        .name {
+          font-size: 1.5rem;
+          font-weight: bold;
+        }
+        .tex{
+          color: $Grayish-blue;
+        }
+      }
+      .ali{
+        @include card();
+      } 
     }
-    
-  }
-  
-  .point {
-    width: 100%;
-    .point1.point2 .point3 {
-      width: 1rem;
-      height: 1rem;
-      color: black;
-    }
-  }
-  
-  .purple {
-    @include purple();
-    &:hover{
-      opacity: 0.5;
-    }
-  }
-  
-
-  .started {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    justify-content: center;
-    background-image: url("./img/bg-simplify-section-mobile.svg");
-    background-repeat: no-repeat;
-    background-position:left;
-    background-color: $bright-Red;
-    h3 {
-      text-align: center;
-      padding: 3rem 1rem 0;
-      color: $Very-Red;
-    }
-    .btn-white {
+    .started {
       display: flex;
-      margin-bottom: 1rem;
-      justify-content: center;
-      padding: 2rem;
-    }
-    
-    .white {
-      @include white();
-      &:hover{
-        opacity: 0.5;
+      flex-direction: row;
+      width: 100%;
+      justify-content: space-around;
+      background-image: url("./img/bg-simplify-section-desktop.svg");
+      background-repeat: no-repeat;
+      background-position:center;
+      background-color:hsl(12, 88%, 59%);
+      h3{
+        width: 30%;
+        padding: 3rem;
+      }
+      .btn-white{
+        align-items: center
       }
     }
+
   }
-  
+  /*.......termina cambios de Brisset.......*/
 
-  
+  /*cambio*/
 
-  
-  @media only screen and(min-width:1000px) {
+  /*.inbox {
+    @include format(row);*/
 
-    .section3 {
-      @mixin card {
-        display: block;
-        width: calc(100% / 3);
-        @include flex-column();
-        padding: 1.5rem;
-      }
-      @include flex-column();
-      .card {
-        display: flex;
-        flex-direction: row;
-        .anisha {
-          @include card();
-          .name {
-            font-size: 1.5rem;
-            font-weight: bold;
-          }
-          .tex{
-            color: $Grayish-blue;
-          }
-        }
-        .richard {
-          @include card();
-          .name {
-            font-size: 1.5rem;
-            font-weight: bold;
-          }
-          .tex{
-            color: $Grayish-blue;
-          }
-        }
-        .ali{
-          @include card();
-        } 
-      }
-      .started {
-        display: flex;
-        flex-direction: row;
-        width: 100%;
-        justify-content: space-around;
-        background-image: url("./img/bg-simplify-section-desktop.svg");
-        background-repeat: no-repeat;
-        background-position:center;
-        background-color:hsl(12, 88%, 59%);
-        h3{
-          width: 30%;
-          padding: 3rem;
-        }
-        .btn-white{
-          align-items: center
-        }
-      }
+  /*@media only screen and(min-width:1000px) {*/
 
-    }
-    
-
-
+/*
     .inbox {
       @include format(row);
   
@@ -336,7 +419,8 @@
         }
       }
     }
-    footer {
+  */  
+   /* footer {
       @include format(row);
     }
     #data-section {
@@ -352,15 +436,53 @@
           align-self: flex-start;
         }
       }
+    }*/
+/*  
+    nav {
+      display: flex;
+      justify-content: space-between;
+      padding: 30px 10px;
     }
-  
-  nav {
+*/
+   /*cambios*/
+/*  
+  footer {
+    @include format(row-reverse);
+    align-items: center;
     display: flex;
-    justify-content: space-between;
-    padding: 30px 10px;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: space-evenly;
+    align-items: center;
+
+    div.inbox{
+      padding-right: 1rem;
+    }
+
+    div:nth-of-type(2){
+      padding: 0;
+    }
+
+  div:nth-of-type(3){
+    @include format(column);
+    align-items: flex-start;
+    img {
+      width: 65%;
+      justify-content: right;  
+    }
+    div{
+      img{
+        width: 30%;
+        margin: 2rem 0;
+      }
+    }
   }
-  
-  #data-section {
+}
+*/
+
+
+
+  /*#data-section {
     padding: 15px;
     display: grid;
     grid-template-columns: 100%;
@@ -400,7 +522,62 @@
         box-shadow: 0px 4px 5px 0px #f25f3a;
       }
     }
+     
+  }
+*/
+/*cambios*/
+/*
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 10px;
+}
+*/
+/*
+#data-section {
+  padding: 15px;
+  display: grid;
+  grid-template-columns: 100%;
+  display: flex;
+  flex-direction: column-reverse;
+  img {
+    width: 100%;
+  }
+  article {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  article {
+    h1 {
+      font-size: xx-large;
+      text-transform: capitalize;
+      color: hsl(228, 39%, 23%);
+      margin-bottom: 1rem;
+      font-weight: bold;
+      
+      
+    }
+    p {
+      color: hsl(227, 12%, 61%);
+      margin-bottom: 1rem;
+      line-height: 1.5;
+      padding: 0 1.5rem;
+      text-align: center;
+    }
+    button {
+      background-color: hsl(12, 88%, 59%);
+      padding: 10px 20px;
+      border: none;
+      border-radius: 20px;
+      text-transform: capitalize;
+      color: hsl(0, 0%, 98%);
+      box-shadow: 0px 4px 5px 0px #f25f3a;
     }
    
   }
-  
+
+}
+*/
+}
