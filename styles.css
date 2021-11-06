@@ -1,4 +1,8 @@
-section {
+* {
+  color: #242d52;
+}
+
+.section3 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -9,6 +13,10 @@ section {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.section3 h3 {
+  font-size: 2rem;
 }
 
 .anisha, .richard {
@@ -38,6 +46,21 @@ section {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.card .ali .name {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.point {
+  width: 100%;
+}
+
+.point .point1.point2 .point3 {
+  width: 1rem;
+  height: 1rem;
+  color: black;
 }
 
 .started {
@@ -85,7 +108,7 @@ section {
 }
 
 @media only screen and (min-width: 768px) {
-  section {
+  .section3 {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;

@@ -1,4 +1,6 @@
-
+*{
+    color: hsl(228, 39%, 23%);
+}
 @mixin color {
     background-color:hsl(12, 88%, 59%);
     background-color:hsl(228, 39%, 23%);
@@ -16,8 +18,11 @@
 }
 
 
-section{
-  @include flex-column()
+.section3{
+  @include flex-column();
+  h3{
+      font-size: 2rem;      
+  }
 }
 
 .anisha, .richard{
@@ -30,7 +35,20 @@ section{
     .ali{
         width: 100%;
         padding: 1.5rem;
-        @include flex-column()
+        @include flex-column();
+        .name{
+            font-size: 1.5rem;  
+            font-weight: bold;
+        }
+    }
+}
+
+.point{
+    width: 100%;
+    .point1.point2 .point3{
+        width: 1rem;
+        height: 1rem;
+        color:black;
     }
 }
 
@@ -70,7 +88,7 @@ section{
 
 
 @media only screen and (min-width:768px) {
-    section{
+    .section3{
         @include flex-column()
     }
     
