@@ -6,6 +6,13 @@
   font-family: "Be Vietnam", sans-serif;
 }
 
+body {
+  background-image: url("./img/bg-tablet-pattern.svg");
+  background-repeat: no-repeat;
+  background-position: right top;
+  text-align: center;
+}
+
 /* Primary */
 /*Neutral */
 .wrapper {
@@ -246,5 +253,102 @@ footer div:nth-of-type(4) img {
         -ms-flex-direction: row;
             flex-direction: row;
   }
+  #data-section {
+    -ms-grid-columns: 50% 50%;
+        grid-template-columns: 50% 50%;
+  }
+  #data-section article:last-child {
+    padding: 0 40px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: left;
+  }
+  #data-section article:last-child button {
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+  }
+}
+
+nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 30px 10px;
+}
+
+#data-section {
+  padding: 15px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 100%;
+      grid-template-columns: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+}
+
+#data-section img {
+  width: 100%;
+}
+
+#data-section article {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#data-section article h1 {
+  font-size: xx-large;
+  text-transform: capitalize;
+  color: #242d52;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+#data-section article p {
+  color: #9095a7;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+  padding: 0 1.5rem;
+  text-align: center;
+}
+
+#data-section article button {
+  background-color: #f25f3a;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  text-transform: capitalize;
+  color: #fafafa;
+  -webkit-box-shadow: 0px 4px 5px 0px #f25f3a;
+          box-shadow: 0px 4px 5px 0px #f25f3a;
 }
 /*# sourceMappingURL=styles.css.map */
