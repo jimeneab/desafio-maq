@@ -1,0 +1,91 @@
+
+@mixin color {
+    background-color:hsl(12, 88%, 59%);
+    background-color:hsl(228, 39%, 23%);
+
+    background-color:hsl(227, 12%, 61%) ;
+    background-color:hsl(233, 12%, 13%);
+    background-color:hsl(13, 100%, 96%);
+    background-color:hsl(0, 0%, 98%);
+}
+
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+section{
+  @include flex-column()
+}
+
+.anisha, .richard{
+    display: none;
+}
+
+.card{
+    display: flex;
+    flex-direction: row;
+    .ali{
+        width: 100%;
+        padding: 1.5rem;
+        @include flex-column()
+    }
+}
+
+.started{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content:center;
+    //background-color:hsl(12, 88%, 59%);
+    h3{
+        text-align: center;
+        padding: 2rem;
+    }
+}
+
+.purple{
+    background-color:hsl(12, 88%, 59%);
+    color: hsl(13, 100%, 96%);
+    border-radius: 1rem;
+    height: 2.2rem;
+    width: 6.5rem;
+}
+
+.btn-white{
+    display: flex;
+    justify-content: center;
+
+}
+
+.white{
+    background-color:hsl(13, 100%, 96%);
+    color: hsl(12, 88%, 59%);
+    border-radius: 1rem;
+    height: 2.2rem;
+    width: 6.5rem;
+}
+
+
+@media only screen and (min-width:768px) {
+    section{
+        @include flex-column()
+    }
+    
+    .card{
+        display: flex;
+        flex-direction: row;
+        div{
+            width: calc(100%/3);
+            @include flex-column()
+        }
+    }
+    .started{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-around;
+    }
+}
