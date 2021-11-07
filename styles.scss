@@ -8,6 +8,42 @@ $Very-Blue: hsl(233, 12%, 13%);
 $Very-Red: hsl(13, 100%, 96%);
 $Very-light: hsl(0, 0%, 98%);
 
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@mixin purple {
+  background-color: $bright-Red;
+  color: $Very-Red;
+  border-radius: 1rem;
+  height: 2.2rem;
+  width: 6.5rem;
+  margin-bottom: 1rem;
+  border: none;
+  cursor: pointer;
+}
+@mixin white {
+  background-color: $Very-Red;
+  color: $bright-Red;
+  border-radius: 1rem;
+  height: 2.2rem;
+  width: 6.5rem;
+  border: none;
+  cursor: pointer;
+}
+@mixin format($direction) {
+  display: flex;
+  flex-direction: $direction;
+}
+
+@mixin card {
+  display: block;
+  width: calc(100% / 3);
+  @include flex-column();
+  padding: 1.5rem;
+}
 * {
   padding: 0;
   margin: 0;
@@ -22,45 +58,71 @@ body {
   padding: 0.5rem;
 }
 
-/*
-@mixin format($direction) {
-  display: flex;
-  flex-direction: $direction;
+header {
+  nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 10px;
+  }
 }
-      
-.wrapper {
-  @include format(column);
-  .question {
-    text-align: center;
-    padding: 1rem;
-    color: $Dark-Blue;
-  } 
-*/
-
-/*.articles {
-  @include format(column);
-  div {
-    @include format(row);
-    position: relative;
-    margin: 1.5px;
-    .number {
-      padding: 0.1rem 1rem;
-      border-radius: 1rem;
-      background-color: $bright-Red;
-      color: $Very-light;
-      position: absolute;
-      width: 15%;
+#data-section {
+  padding: 15px;
+  display: grid;
+  grid-template-columns: 100%;
+  display: flex;
+  flex-direction: column-reverse;
+  img {
+    width: 100%;
+  }
+  article {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h1 {
+      font-size: xx-large;
+      text-transform: capitalize;
+      color: hsl(228, 39%, 23%);
+      margin-bottom: 1rem;
+      font-weight: bold;
     }
     p {
-      padding: 1rem;
-      text-align: center;
-      color: $Grayish-blue;
-      line-height: 1.7;
+      color: hsl(227, 12%, 61%);
+      margin-bottom: 1rem;
+      line-height: 1.5;
+      padding: 0;
+      text-align: justify;
+    }
+    button {
+      background-color: hsl(12, 88%, 59%);
+      padding: 10px 20px;
+      border: none;
+      border-radius: 20px;
+      text-transform: capitalize;
+      color: hsl(0, 0%, 98%);
+      box-shadow: 0px 4px 5px 0px #f25f3a;
     }
   }
-*/
-  
-/*  .articles {
+}
+
+div {
+  .wrapper {
+    @include format(column);
+    .question {
+      text-align: center;
+      padding: 1rem;
+      color: $Dark-Blue;
+      font-weight: bold;
+      font-size: xx-large;
+    }
+    p {
+      padding: 1.5rem;
+      color: $Grayish-blue;
+      line-height: 1.5;
+      text-align: justify;
+    }
+  }
+  .articles {
     @include format(column);
     div {
       @include format(row);
@@ -89,255 +151,186 @@ body {
       color: $Grayish-blue;
       line-height: 1.7;
     }
- }
- */
-  /*
-  footer {
-    background-color: $Very-Blue;
-    @include format(column);
-    .inbox{
-      @include format(row);
-      justify-content: center;
-      padding: 1.5rem 0;
-      input {
-        margin: 0.5rem;
-        width: 65%;
-        border-radius: 50px;
-        padding: 0.8rem;
-        border: none;
-      }
-      button {
-        padding: 0.5rem;
-        margin: 8px 0;
-        border-radius: 50px;
-        width: 25%;
-        background-color: $bright-Red;
-        color: $Very-light;
-        border: none;
-      }
+  }
+}
+
+.section3 {
+  @include flex-column();
+  color: $Dark-Blue;
+  h3 {
+    font-size: 2rem;
+  }
+  .card {
+    display: flex;
+    flex-direction: row;
+    .anisha {
+      display: none;
     }
-    div:nth-of-type(2) {
-      ul {
-        column-count: 2;
-        padding: 3rem;
-        li {
-          display: flex;
-          list-style-type: none;
-          line-height: 2;
-  
-          a {
-            color: $Very-light;
-            text-decoration: none;
-          }
-        }
-      }
+    .richard {
+      display: none;
     }
-    div:nth-of-type(3) {
-      @include format(row);
-      justify-content: center;
-      margin: 2rem 2rem 1rem 2rem;
-      img {
-        width: 55px;
-        padding: 10px;
-        margin: 0px 5px;
+    .ali {
+      width: 100%;
+      padding: 1.5rem;
+      @include flex-column();
+      .name {
+        font-size: 1.5rem;
+        font-weight: bold;
       }
-    }
-    div:nth-of-type(4) {
-      @include format(column);
-      justify-content: center;
-      p {
-        @include format(row);
-        justify-content: center;
-        font-size: 8pt;
-        padding: 1rem;
+      .tex {
         color: $Grayish-blue;
       }
-      img {
-        @include format(row);
-        justify-content: center;
-        margin: 1rem 5rem;
-        width: 200px;
-      }
     }
-  }   
-*/
-
-/*.......empieza cambios de Brisset.......*/
-    @mixin flex-column {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    @mixin purple {
-      background-color: $bright-Red;
-      color: $Very-Red;
-      border-radius: 1rem;
-      height: 2.2rem;
-      width: 6.5rem;
-      margin-bottom: 1rem;
-      border: none;
-      cursor: pointer;
-    }
-    @mixin white {
-      background-color: $Very-Red;
-      color:  $bright-Red;
-      border-radius: 1rem;
-      height: 2.2rem;
-      width: 6.5rem;
-      border: none;
-      cursor: pointer;
-    }
-  .section3 {
-      @include flex-column();
-      color: $Dark-Blue;
-      h3 {
-        font-size: 2rem;
-      }
-      .card {
-        display: flex;
-        flex-direction: row;
-        .anisha  {
-          display: none;
-        }
-        .richard {
-          display: none;
-        }
-        .ali {
-          width: 100%;
-          padding: 1.5rem;
-          @include flex-column();
-          .name {
-            font-size: 1.5rem;
-            font-weight: bold;
-          }
-          .tex{
-            color: $Grayish-blue;
-          }
-        }
-      }
-      .point {
-        width: 100%;
-        .point1.point2 .point3 {
-          width: 1rem;
-          height: 1rem;
-          color: black;
-        }
-      }
-      .purple {
-        @include purple();
-        &:hover{
-          opacity: 0.5;
-        }
-      }
-      .started {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        justify-content: center;
-        background-image: url("./img/bg-simplify-section-mobile.svg");
-        background-repeat: no-repeat;
-        background-position:left;
-        background-color: $bright-Red;
-        h3 {
-          text-align: center;
-          padding: 3rem 1rem 0;
-          color: $Very-Red;
-        }
-        .btn-white {
-          display: flex;
-          margin-bottom: 1rem;
-          justify-content: center;
-          padding: 2rem;
-        }
-        
-        .white {
-          @include white();
-          &:hover{
-            opacity: 0.5;
-          }
-    
-        }
-      }
   }
-/*.......termina cambios de Brisset.......*/
-/*
-  footer {
-    background-color: $Very-Blue;
-  
-    @include format(column);
-    .inbox {
+  .point {
+    width: 100%;
+    .point1.point2 .point3 {
+      width: 1rem;
+      height: 1rem;
+      color: black;
+    }
+  }
+  .purple {
+    @include purple();
+    box-shadow: 0px 4px 5px 0px #f25f3a;
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+  .started {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    background-image: url("./img/bg-simplify-section-mobile.svg");
+    background-repeat: no-repeat;
+    background-position: left;
+    background-color: $bright-Red;
+    h3 {
+      text-align: center;
+      padding: 3rem 1rem 0;
+      color: $Very-Red;
+    }
+    .btn-white {
+      display: flex;
+      margin-bottom: 1rem;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .white {
+      @include white();
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+  }
+}
+
+footer {
+  background-color: $Very-Blue;
+
+  @include format(column);
+  .inbox {
+    @include format(row);
+    justify-content: center;
+    padding: 1.5rem 0;
+    input {
+      margin: 0.5rem;
+      width: 65%;
+      border-radius: 50px;
+      padding: 0.8rem;
+      border: none;
+    }
+    button {
+      padding: 0.5rem;
+      margin: 8px 0;
+      border-radius: 50px;
+      width: 25%;
+      background-color: $bright-Red;
+      color: $Very-light;
+      border: none;
+    }
+  }
+
+  div:nth-of-type(2) {
+    padding-left: 1rem;
+    ul {
+      column-count: 2;
+      padding: 2.5rem;
+      li {
+        display: flex;
+        list-style-type: none;
+        line-height: 2;
+        a {
+          color: $Very-light;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  div:nth-of-type(3) {
+    @include format(column-reverse);
+    justify-content: space-around;
+    color: $Grayish-blue;
+    align-items: center;
+    padding: 0;
+
+    img {
+      width: 45%;
+      padding: 10px;
+      margin: 0px 5px;
+    }
+    div {
       @include format(row);
       justify-content: center;
-      padding: 1.5rem 0;
-      input {
-        margin: 0.5rem;
-        width: 65%;
-        border-radius: 50px;
-        padding: 0.8rem;
-        border: none;
+      img {
+        justify-content: center;
+        margin: 1rem 0.5rem;
+        width: 50px;
       }
     }
-  
-    div:nth-of-type(2) {
-      padding-left: 1rem;
-        ul {
-          column-count: 2;
-          padding: 2.5rem;
-          li {
-            display: flex;
-            list-style-type: none;
-            line-height: 2;
-              a {
-              color: $Very-light;
-              text-decoration: none;
-            }
-          }
-        }
-        
-      }
-  
-  
-    div:nth-of-type(3) {
-      @include format(column-reverse);
-      justify-content: space-around;
+    p {
+      @include format(row);
+      justify-content: center;
+      font-size: 8pt;
+      padding: 1rem;
       color: $Grayish-blue;
-      align-items: center;
-      padding: 0;
-    
-      img {
-        width: 45%;
-        padding: 10px;
-        margin: 0px 5px;
-      }
-      div {
+    }
+  }
+}
+
+
+
+@media only screen and(min-width:1400px) {
+  /*.......empieza cambios de Brisset.......*/
+  #data-section {
+    @include format(row);
+    padding: 3rem;
+
+    article:first-of-type {
+      margin-right: 5rem;
+      h1 {
         @include format(row);
-        justify-content: center;
-        img {
-          
-          justify-content: center;
-          margin: 1rem 0.5rem;
-          width: 50px;
-        }
+        text-align: left;
+        padding-right: 10rem;
+        margin-right: 15rem;
       }
       p {
-        @include format(row);
-        justify-content: center;
-        font-size: 7pt;
-        padding: 2rem;
+        text-align: left;
+        margin-bottom: 2rem;
+        margin-right: 20rem;
+      }
+      button {
+        margin-right: 35rem;
       }
     }
+    img {
+      margin-right: 20rem;
+    }
   }
-*/ 
- 
-@media only screen and(min-width:1000px) {
-/*.......empieza cambios de Brisset.......*/
 
-  @mixin card {
-    display: block;
-    width: calc(100% / 3);
-    @include flex-column();
-    padding: 1.5rem;
-  }
   .section3 {
     @include flex-column();
     .card {
@@ -349,7 +342,7 @@ body {
           font-size: 1.5rem;
           font-weight: bold;
         }
-        .tex{
+        .tex {
           color: $Grayish-blue;
         }
       }
@@ -359,13 +352,13 @@ body {
           font-size: 1.5rem;
           font-weight: bold;
         }
-        .tex{
+        .tex {
           color: $Grayish-blue;
         }
       }
-      .ali{
+      .ali {
         @include card();
-      } 
+      }
     }
     .started {
       display: flex;
@@ -374,78 +367,18 @@ body {
       justify-content: space-around;
       background-image: url("./img/bg-simplify-section-desktop.svg");
       background-repeat: no-repeat;
-      background-position:center;
-      background-color:hsl(12, 88%, 59%);
-      h3{
+      background-position: center;
+      background-color: hsl(12, 88%, 59%);
+      h3 {
         width: 30%;
         padding: 3rem;
       }
-      .btn-white{
-        align-items: center
-      }
-    }
-
-  }
-  /*.......termina cambios de Brisset.......*/
-
-  /*cambio*/
-
-  /*.inbox {
-    @include format(row);*/
-
-  /*@media only screen and(min-width:1000px) {*/
-
-/*
-    .inbox {
-      @include format(row);
-  
-      .wrapper {
-        padding: 3rem 6rem;
-  
-        .question {
-          text-align: left;
-        }
-        p {
-          text-align: left;
-        }
-      }
-      .articles {
-        padding: 3rem 6rem;
-  
-        div {
-          span:not(.number) {
-            background-color: $Very-light;
-          }
-        }
-      }
-    }
-  */  
-   /* footer {
-      @include format(row);
-    }
-    #data-section {
-      grid-template-columns: 50% 50%;
-      article:last-child {
-        padding: 0 40px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+      .btn-white {
         align-items: center;
-        text-align: left;
-        button {
-          align-self: flex-start;
-        }
       }
-    }*/
-/*  
-    nav {
-      display: flex;
-      justify-content: space-between;
-      padding: 30px 10px;
     }
-*/
-   /*cambios*/
-/*  
+  }
+
   footer {
     @include format(row-reverse);
     align-items: center;
@@ -455,129 +388,53 @@ body {
     justify-content: space-evenly;
     align-items: center;
 
-    div.inbox{
+    div.inbox {
       padding-right: 1rem;
     }
 
-    div:nth-of-type(2){
+    div:nth-of-type(2) {
       padding: 0;
     }
 
-  div:nth-of-type(3){
-    @include format(column);
-    align-items: flex-start;
-    img {
-      width: 65%;
-      justify-content: right;  
-    }
-    div{
-      img{
-        width: 30%;
-        margin: 2rem 0;
+    div:nth-of-type(3) {
+      @include format(column);
+      align-items: flex-start;
+      img {
+        width: 65%;
+        justify-content: right;
+      }
+      div {
+        img {
+          width: 30%;
+          margin: 2rem 0;
+        }
       }
     }
   }
-}
-*/
-
-
-
-  /*#data-section {
-    padding: 15px;
-    display: grid;
-    grid-template-columns: 100%;
-    display: flex;
-    flex-direction: column-reverse;
-    img {
-      width: 100%;
-    }
-    article {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
-    article {
-      h1 {
-        font-size: xx-large;
-        text-transform: capitalize;
-        color: hsl(228, 39%, 23%);
-        margin-bottom: 1rem;
-        font-weight: bold;
+  div {
+    @include format(row);
+    .wrapper {
+      margin-left: 2rem;
+      .question {
+        @include format(row);
       }
       p {
-        color: hsl(227, 12%, 61%);
-        margin-bottom: 1rem;
-        line-height: 1.5;
-        padding: 0 1.5rem;
-        text-align: center;
-      }
-      button {
-        background-color: hsl(12, 88%, 59%);
-        padding: 10px 20px;
-        border: none;
-        border-radius: 20px;
-        text-transform: capitalize;
-        color: hsl(0, 0%, 98%);
-        box-shadow: 0px 4px 5px 0px #f25f3a;
+        padding-right: 5rem;
+        text-align: left;
+        line-height: 2;
       }
     }
-     
-  }
-*/
-/*cambios*/
-/*
-nav {
-  display: flex;
-  justify-content: space-between;
-  padding: 30px 10px;
-}
-*/
-/*
-#data-section {
-  padding: 15px;
-  display: grid;
-  grid-template-columns: 100%;
-  display: flex;
-  flex-direction: column-reverse;
-  img {
-    width: 100%;
-  }
-  article {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  article {
-    h1 {
-      font-size: xx-large;
-      text-transform: capitalize;
-      color: hsl(228, 39%, 23%);
-      margin-bottom: 1rem;
-      font-weight: bold;
-      
-      
+    .articles {
+      padding: 1rem 7rem;
+      text-align: left;
+      .card {
+        background: none;
+        span:not(.number) {
+          background: none;
+        }
+      }
     }
-    p {
-      color: hsl(227, 12%, 61%);
-      margin-bottom: 1rem;
-      line-height: 1.5;
-      padding: 0 1.5rem;
-      text-align: center;
-    }
-    button {
-      background-color: hsl(12, 88%, 59%);
-      padding: 10px 20px;
-      border: none;
-      border-radius: 20px;
-      text-transform: capitalize;
-      color: hsl(0, 0%, 98%);
-      box-shadow: 0px 4px 5px 0px #f25f3a;
-    }
-   
   }
 
 }
-*/
-}
+
