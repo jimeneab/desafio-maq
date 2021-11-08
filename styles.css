@@ -20,10 +20,28 @@ header nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 30px 10px;
+}
+
+header nav button {
+  visibility: hidden;
+  width: 0;
+}
+
+header nav ul {
+  visibility: hidden;
+  width: 0;
+}
+
+header nav img {
+  padding: 4rem 2rem;
+  margin: 0;
 }
 
 #data-section {
@@ -442,6 +460,78 @@ p.responsive{
 }*/
 @media only screen and (min-width: 1400px) {
   /*.......empieza cambios de Brisset.......*/
+  header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  header nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    position: relative;
+  }
+  header nav img {
+    padding-left: 4rem;
+  }
+  header nav ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    visibility: visible;
+    width: 100%;
+    padding-left: 3rem;
+  }
+  header nav ul li {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  header nav ul li a {
+    padding: 2rem;
+    text-decoration: none;
+  }
+  header nav button {
+    visibility: visible;
+    background-color: #f25f3a;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    text-transform: capitalize;
+    color: #fafafa;
+    -webkit-box-shadow: 0px 4px 5px 0px #f25f3a;
+            box-shadow: 0px 4px 5px 0px #f25f3a;
+    position: absolute;
+    width: 10rem;
+    right: 8rem;
+    bottom: 3rem;
+  }
+  header nav img:nth-of-type(2) {
+    visibility: hidden;
+    width: 0;
+  }
   #data-section {
     display: -webkit-box;
     display: -ms-flexbox;
