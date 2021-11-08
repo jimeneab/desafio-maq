@@ -229,8 +229,13 @@ div {
 
 footer {
   background-color: $Very-Blue;
-
+  p {
+    padding: 1rem;
+    color: $Grayish-blue;
+    font-size: 8pt;
+  }
   @include format(column);
+
   .inbox {
     @include format(row);
     justify-content: center;
@@ -301,7 +306,10 @@ footer {
   }
 }
 
-
+/*
+p.responsive{
+  visibility: hidden;
+}*/
 
 @media only screen and(min-width:1400px) {
   /*.......empieza cambios de Brisset.......*/
@@ -315,12 +323,14 @@ footer {
         @include format(row);
         text-align: left;
         padding-right: 10rem;
-        margin-right: 15rem;
+        margin-right: 10rem;
+        font-size: 40pt;
+        line-height: 1.2;
       }
       p {
         text-align: left;
         margin-bottom: 2rem;
-        margin-right: 20rem;
+        margin-right: 25rem;
       }
       button {
         margin-right: 35rem;
@@ -379,38 +389,6 @@ footer {
     }
   }
 
-  footer {
-    @include format(row-reverse);
-    align-items: center;
-    display: flex;
-    flex-wrap: nowrap;
-    align-content: center;
-    justify-content: space-evenly;
-    align-items: center;
-
-    div.inbox {
-      padding-right: 1rem;
-    }
-
-    div:nth-of-type(2) {
-      padding: 0;
-    }
-
-    div:nth-of-type(3) {
-      @include format(column);
-      align-items: flex-start;
-      img {
-        width: 65%;
-        justify-content: right;
-      }
-      div {
-        img {
-          width: 30%;
-          margin: 2rem 0;
-        }
-      }
-    }
-  }
   div {
     @include format(row);
     .wrapper {
@@ -435,6 +413,46 @@ footer {
       }
     }
   }
+  footer {
+    @include format(row-reverse);
+    align-items: center;
+    display: flex;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: space-evenly;
+    align-items: center;
+    position: relative;
+    p {
+      color: $Grayish-blue;
+      position: absolute;
+      right: 165px;
+      bottom: 25px;
 
+      
+    }
+    
+    div.inbox {
+      padding-bottom: 3rem;
+      input {
+        width: 70%;
+      }
+    }
+    div:nth-of-type(2) {
+      padding: 0;
+    }
+    div:nth-of-type(3) {
+      @include format(column);
+      align-items: flex-start;
+      img {
+        width: 65%;
+        justify-content: right;
+      }
+      div {
+        img {
+          width: 30%;
+          margin: 2rem 0;
+        }
+      }
+    }
+  }
 }
-
